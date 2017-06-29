@@ -1,6 +1,6 @@
 <% @posts.each do |post| %>
   <div class="post_wrapper">
     <h4 class="title"><%= link_to post.title, post %></h4>
-    <p class="date"><%= post.created_at.strftime("%B, %d, %Y") %></p>
+    <p class="date">Barked on <%= post.created_at.strftime("%B, %d, %Y") %></p>
   </div>
 <% end %>
