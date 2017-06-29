@@ -1,7 +1,18 @@
 <div id="page_wrapper">
-  <h1> New Post </h1>
+  <h3> New Bark </h3><br />
 
   <%= form_for :post, url: posts_path do |f| %>
+    <% if @post.errors.any?%>
+      <div id="errors">
+        <h5><%= pluralize(@post.errors.count, "error")%> prevented this post from saving:</h5>
+        <ul>
+          <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <br />
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
     <p>
     <%= f.label :title%><br>
     <%= f.text_field :title%>
@@ -13,7 +24,7 @@
     </p>
 
   </p>
-      <%= f.submit %>
+      <%= f.submit :Bark! %>
     </p>
 
   <% end %>
