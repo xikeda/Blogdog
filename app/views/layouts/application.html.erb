@@ -29,24 +29,33 @@
       <li><a href="https://github.com/xikeda" target="_blank">Github</a></li>
       <li><a href="mailto:brandon.k.ikeda@gmail.com">Email</a></li>
     </ul>
-
-    <p class="sign_in">Admin Login</p>
   </div>
 
   <div id="main_content">
     <div id="header">
-      <a href="/about"><span class="glyphicon glyphicon-home"></span></a>
 
+      <% if user_signed_in? %>
+      <a href="/about"><span class="glyphicon glyphicon-home"></span></a>
+      <% end %>
+
+      <% if !user_signed_in? %>
+      <div class="buttons">
+        <button class="button" style="padding-left: 2.5em;"><a href="/users/sign_in">Sign in</a></button>
+        <button class="button" style="padding-left: 2.5em;"><a href="/users/sign_up">Sign up</a></button>
+      </div>
+      <% end %>
+
+      <% if user_signed_in? %>
       <div class="buttons">
         <button class="button" style="padding-left: 2.5em;"><%= link_to "Bark", new_post_path %></button>
         <button class="button">Log out</button>
-
       </div>
+      <% end %>
     </div>
-    <% flash.each do |name, msg| %>
-      <%= content_Tag(:div, msg, class: "alert") %>
-    <% end %>
 
+    <% flash.each do |name, msg| %>
+      <%= content_tag(:div, msg, class: "alert") %>
+    <% end %>
 
     <%= yield %>
   </div>

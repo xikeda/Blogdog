@@ -105,7 +105,7 @@ a {
 #main_content {
 	margin-left: 150px;
 	#header {
-		padding: 1em 3em;
+		padding: 2em 3em 2em 2em;
 		border-bottom: 1px solid #d6dce0;
 		background: #f5f7f9;
 		color: #9eafba;
@@ -116,7 +116,7 @@ a {
 		}
 		.buttons {
 			float: right;
-			margin-top: -6px;
+			margin-top: -1em;
 			.button {
 				font-size: .8em;
 			}
