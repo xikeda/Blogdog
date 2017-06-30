@@ -48,7 +48,7 @@
       <% if user_signed_in? %>
       <div class="buttons">
         <button class="button" style="padding-left: 2.5em;"><%= link_to "Bark", new_post_path %></button>
-        <button class="button">Log out</button>
+        <button class="button" style="padding-left: 2.5em;"> <%= link_to('Logout', destroy_user_session_path, method: :delete) %> </button>
       </div>
       <% end %>
     </div>
