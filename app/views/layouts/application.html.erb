@@ -19,8 +19,8 @@
 
     <ul>
       <li class="category" style="font-size: 12px; text-align: right;">BlogDog</li>
-      <li><%= link_to "Blog", root_path %></li>
-      <li>About</li>
+      <li><%= link_to "Top Dogs", root_path %></li>
+      <li><%= link_to "About", about_path %></li>
     </ul>
 
     <ul>
@@ -35,7 +35,7 @@
 
   <div id="main_content">
     <div id="header">
-      <a href="/"><span class="glyphicon glyphicon-home"></span></a>
+      <a href="/about"><span class="glyphicon glyphicon-home"></span></a>
 
       <div class="buttons">
         <button class="button" style="padding-left: 2.5em;"><%= link_to "Bark", new_post_path %></button>
