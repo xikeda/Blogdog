@@ -11,6 +11,8 @@ end
 gem 'rails', '~> 5.1.2'
 # Postgres
 gem "pg"
+# sqlite
+gem 'sqlite3'
 # Heroku Pre-req
 gem 'rails_12factor', group: :production
 # Use Puma as the app server
