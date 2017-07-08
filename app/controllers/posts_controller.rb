@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  
+
   def index
     @posts = Post.all.order('created_at DESC')
   end
@@ -32,7 +32,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.update(params[:post].permit(:title, :body))
-      redirect_to @post
+      redirect_to posts_path
     else
       render 'edit'
     end
@@ -42,6 +42,18 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
 
+    redirect_to posts_path
+  end
+
+  def upvote
+    @post = Post.find(params[:id])
+    @post.upvote_by current_user
+    redirect_to posts_path
+  end
+
+  def downvote
+    @post = Post.find(params[:id])
+    @post.downvote_by current_user
     redirect_to posts_path
   end
 

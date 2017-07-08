@@ -12,7 +12,7 @@ gem 'rails', '~> 5.1.2'
 # Postgres
 gem "pg"
 # sqlite
-# gem 'sqlite3'
+gem 'sqlite3'
 # Heroku Pre-req
 gem 'rails_12factor', group: :production
 # Use Puma as the app server
@@ -59,3 +59,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
+gem 'acts_as_votable'
