@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_filter :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def new
     @comment = current_user.comments.build
@@ -12,8 +12,9 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to post_path(@post)
     else
-      render 'new'
+      redirect_to root_path
     end
+
   end
 
   def destroy
